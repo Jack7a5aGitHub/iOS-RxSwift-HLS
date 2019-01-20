@@ -14,6 +14,9 @@ final class VideoLooperView: UIView {
     // MARK: - Property
     let clips: [MovieClips]
     let videoPlayerView = VideoPlayerView()
+    let playerView = UIView()
+    let cancelButton = UIButton()
+    let playButton = UIButton()
     
     @objc private let player = AVQueuePlayer()
     private var token: NSKeyValueObservation?
@@ -22,12 +25,17 @@ final class VideoLooperView: UIView {
         self.clips = clips
         print("clips", self.clips)
         super.init(frame: .zero)
-        
+    
         initializePlayer()
         addGestureRecognizers()
     }
     private func addSubview() {
-        
+        playerView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cancelButton.setTitle("X", for: .normal)
+        playButton.setTitle("▶︎", for: .normal)
+        addSubview(playerView)
+        addSubview(cancelButton)
+        addSubview(playButton)
     }
     // call video player to play preview which came from HomeViewController
     private func initializePlayer() {
@@ -76,13 +84,13 @@ final class VideoLooperView: UIView {
     
     //  Single tapping should toggle the volume
     @objc func wasTapped() {
-        print(#function)
+      
         player.volume = player.volume == 1.0 ? 0.0 : 1.0
     }
     
     //  Double tapping should toggle the rate between 2x and 1x
     @objc func wasDoubleTapped() {
-        print(#function)
+
         player.rate = player.rate == 1.0 ? 2.0 : 1.0
     }
     
@@ -95,7 +103,9 @@ final class VideoLooperView: UIView {
 extension VideoLooperView {
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+//         playButton.anchor(top: self.topAnchor, leading: nil, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), size: CGSize(width: 30, height: self.frame.height))
+//        cancelButton.anchor(top: self.topAnchor, leading: nil, bottom: self.bottomAnchor, trailing: playButton.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), size: CGSize(width: 30, height: self.frame.height))
+//        playerView.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: cancelButton.leadingAnchor)
         videoPlayerView.frame = bounds
         addSubview(videoPlayerView)
     }

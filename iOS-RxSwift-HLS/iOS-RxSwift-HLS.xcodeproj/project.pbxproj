@@ -44,6 +44,7 @@
 		0A8B82A821EDC2E900EFBDB8 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B82A721EDC2E900EFBDB8 /* MovieModel.swift */; };
 		0A8B82AA21EDC90F00EFBDB8 /* GetMovieParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B82A921EDC90F00EFBDB8 /* GetMovieParameter.swift */; };
 		0A8B9A2A21F1881100EFBDB8 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8B8ECF21F187CF00EFBDB8 /* Kingfisher.framework */; };
+		0A9FCAE521F4D00A00CF7B2D /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FCAE421F4D00A00CF7B2D /* Extension+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -4774,7 +4775,7 @@
 		0A8B98D421F187E600EFBDB8 /* SwiftStdLibToolInputDependencies.dep */ = {isa = PBXFileReference; lastKnownFileType = file; path = SwiftStdLibToolInputDependencies.dep; sourceTree = "<group>"; };
 		0A8B98D521F187E600EFBDB8 /* all-product-headers.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "all-product-headers.yaml"; sourceTree = "<group>"; };
 		0A8B98D621F187E600EFBDB8 /* iOS-RxSwift-HLS-all-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iOS-RxSwift-HLS-all-target-headers.hmap"; sourceTree = "<group>"; };
-		0A8B98D721F187E600EFBDB8 /* assetcatalog_dependencies */ = {isa = PBXFileReference; lastKnownFileType = file; path = assetcatalog_dependencies; sourceTree = "<group>"; };
+		0A8B98D721F187E600EFBDB8 /* assetcatalog_dependencies */ = {isa = PBXFileReference; lastKnownFileType = text; path = assetcatalog_dependencies; sourceTree = "<group>"; };
 		0A8B98D821F187E600EFBDB8 /* iOS-RxSwift-HLS-generated-files.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iOS-RxSwift-HLS-generated-files.hmap"; sourceTree = "<group>"; };
 		0A8B98D921F187E600EFBDB8 /* iOS-RxSwift-HLS.app.xcent */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "iOS-RxSwift-HLS.app.xcent"; sourceTree = "<group>"; };
 		0A8B98DA21F187E600EFBDB8 /* iOS-RxSwift-HLS.app-Simulated.xcent */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "iOS-RxSwift-HLS.app-Simulated.xcent"; sourceTree = "<group>"; };
@@ -4945,6 +4946,7 @@
 		0A8B998D21F187E700EFBDB8 /* arm64.swiftmodule */ = {isa = PBXFileReference; lastKnownFileType = file; path = arm64.swiftmodule; sourceTree = "<group>"; };
 		0A8B998E21F187E700EFBDB8 /* arm64.swiftdoc */ = {isa = PBXFileReference; lastKnownFileType = file; path = arm64.swiftdoc; sourceTree = "<group>"; };
 		0A8B998F21F187E700EFBDB8 /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Alamofire.framework.dSYM; sourceTree = "<group>"; };
+		0A9FCAE421F4D00A00CF7B2D /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5048,6 +5050,7 @@
 			children = (
 				0A8B826D21EDBBB300EFBDB8 /* Extension+UIFont.swift */,
 				0A8B826E21EDBBB300EFBDB8 /* Extension+UILabel.swift */,
+				0A9FCAE421F4D00A00CF7B2D /* Extension+UIView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -20547,6 +20550,7 @@
 				0A8B828321EDBBC000EFBDB8 /* APIClient.swift in Sources */,
 				0A8B828521EDBBC000EFBDB8 /* LogHelper.swift in Sources */,
 				0A83533D21F2E3B900701EC4 /* VideoPlayerView.swift in Sources */,
+				0A9FCAE521F4D00A00CF7B2D /* Extension+UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
