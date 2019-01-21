@@ -26,7 +26,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let viewModel = HomeViewModel(disposeBag: disposeBag)
-        //? Add the video looper view
         registerNib()
         bindToTableView(to: viewModel)
         bindToPreview(to: viewModel)
@@ -103,6 +102,7 @@ extension HomeViewController {
     private func loadViews() {
         videoPreviewLooper = VideoLooperView(clips: MovieClips.allClips(movies: movies))
         view.addSubview(videoPreviewLooper!)
+        videoPreviewLooper?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         //videoPreviewLooper?.play()
     }
     override func viewWillLayoutSubviews() {
