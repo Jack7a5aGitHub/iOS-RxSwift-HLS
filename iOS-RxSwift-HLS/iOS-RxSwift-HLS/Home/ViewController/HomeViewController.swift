@@ -103,11 +103,10 @@ extension HomeViewController {
     private func loadViews() {
         videoPreviewLooper = VideoLooperView(clips: MovieClips.allClips(movies: movies))
         view.addSubview(videoPreviewLooper!)
-        videoPreviewLooper?.play()
+        //videoPreviewLooper?.play()
     }
     override func viewWillLayoutSubviews() {
-        videoPreviewLooper?.frame = CGRect(x: view.bounds.width - 150 - 16, y: view.bounds.height - 100 - 16, width: 150, height: 100)
-        videoPreviewLooper?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        videoPreviewLooper?.frame = CGRect(x: 16, y: view.bounds.height - 100 - 16, width: view.bounds.width - 32, height: 60)
     }
 }
 

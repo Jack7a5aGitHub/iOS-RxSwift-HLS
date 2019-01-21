@@ -23,26 +23,41 @@ final class VideoLooperView: UIView {
     
     init(clips: [MovieClips]) {
         self.clips = clips
-        print("clips", self.clips)
         super.init(frame: .zero)
-    
         initializePlayer()
+        addSubview()
         addGestureRecognizers()
     }
     private func addSubview() {
-        playerView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        cancelButton.setTitle("X", for: .normal)
-        playButton.setTitle("▶︎", for: .normal)
+        
+        playerView.backgroundColor = .black
+        cancelButton.setTitleAndColor(text: "✖️", fontSize: 16, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        playButton.setTitleAndColor(text: "▶️", fontSize: 16, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        cancelButton.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
+        playButton.addTarget(self, action: #selector(playVideo), for: .touchUpInside)
         addSubview(playerView)
         addSubview(cancelButton)
         addSubview(playButton)
+    }
+    @objc private func dismiss() {
+        self.removeFromSuperview()
+    }
+    @objc private func playVideo() {
+        if player.isPlaying {
+            pause()
+            playButton.setTitleAndColor(text: "▶️", fontSize: 16, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        } else {
+            play()
+            playButton.setTitleAndColor(text: "⏸", fontSize: 16, fontColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        }
     }
     // call video player to play preview which came from HomeViewController
     private func initializePlayer() {
         videoPlayerView.player = player
         addAllVideosToPlayer()
         player.volume = 0.0
-        player.play()
+        
+       // player.play()
         // to loop the videos infinitely
         token = player.observe(\.currentItem) { [weak self] player, _ in
             if player.items().count == 1 {
@@ -65,6 +80,7 @@ final class VideoLooperView: UIView {
     }
     
     func play() {
+        
         player.play()
     }
     
@@ -93,7 +109,7 @@ final class VideoLooperView: UIView {
 
         player.rate = player.rate == 1.0 ? 2.0 : 1.0
     }
-    
+ 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -103,10 +119,22 @@ final class VideoLooperView: UIView {
 extension VideoLooperView {
     override func layoutSubviews() {
         super.layoutSubviews()
-//         playButton.anchor(top: self.topAnchor, leading: nil, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), size: CGSize(width: 30, height: self.frame.height))
-//        cancelButton.anchor(top: self.topAnchor, leading: nil, bottom: self.bottomAnchor, trailing: playButton.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), size: CGSize(width: 30, height: self.frame.height))
-//        playerView.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: cancelButton.leadingAnchor)
-        videoPlayerView.frame = bounds
+         playButton.anchor(top: self.topAnchor, leading: nil, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0), size: CGSize(width: 30, height: 30))
+        cancelButton.anchor(top: self.topAnchor, leading: nil, bottom: self.bottomAnchor, trailing: playButton.leadingAnchor, padding: UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0), size: CGSize(width: 30, height: 30))
+        playerView.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: cancelButton.leadingAnchor)
+        videoPlayerView.frame = playerView.frame
         addSubview(videoPlayerView)
     }
+}
+
+extension AVPlayer {
+    
+    var isPlaying: Bool {
+        if (self.rate != 0 && self.error == nil) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
 }

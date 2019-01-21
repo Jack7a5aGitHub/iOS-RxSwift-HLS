@@ -45,6 +45,7 @@
 		0A8B82AA21EDC90F00EFBDB8 /* GetMovieParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B82A921EDC90F00EFBDB8 /* GetMovieParameter.swift */; };
 		0A8B9A2A21F1881100EFBDB8 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8B8ECF21F187CF00EFBDB8 /* Kingfisher.framework */; };
 		0A9FCAE521F4D00A00CF7B2D /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FCAE421F4D00A00CF7B2D /* Extension+UIView.swift */; };
+		0A9FCB1B21F4D4AC00CF7B2D /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9FCB1A21F4D4AC00CF7B2D /* Extension+UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -4947,6 +4948,7 @@
 		0A8B998E21F187E700EFBDB8 /* arm64.swiftdoc */ = {isa = PBXFileReference; lastKnownFileType = file; path = arm64.swiftdoc; sourceTree = "<group>"; };
 		0A8B998F21F187E700EFBDB8 /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Alamofire.framework.dSYM; sourceTree = "<group>"; };
 		0A9FCAE421F4D00A00CF7B2D /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		0A9FCB1A21F4D4AC00CF7B2D /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5051,6 +5053,7 @@
 				0A8B826D21EDBBB300EFBDB8 /* Extension+UIFont.swift */,
 				0A8B826E21EDBBB300EFBDB8 /* Extension+UILabel.swift */,
 				0A9FCAE421F4D00A00CF7B2D /* Extension+UIView.swift */,
+				0A9FCB1A21F4D4AC00CF7B2D /* Extension+UIButton.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -20541,6 +20544,7 @@
 				0A8B82AA21EDC90F00EFBDB8 /* GetMovieParameter.swift in Sources */,
 				0A8B829221EDBBD200EFBDB8 /* Model+Rx.swift in Sources */,
 				0A8B824D21ED77E500EFBDB8 /* AppDelegate.swift in Sources */,
+				0A9FCB1B21F4D4AC00CF7B2D /* Extension+UIButton.swift in Sources */,
 				0A8B827A21EDBBB300EFBDB8 /* SVProgress.swift in Sources */,
 				0A83534221F481FF00701EC4 /* MovieClips.swift in Sources */,
 				0A8B829621EDBBD200EFBDB8 /* EndPoint.swift in Sources */,
